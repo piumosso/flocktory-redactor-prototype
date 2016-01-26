@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Редактор виджетов</title>
+  <script type="text/javascript" src="bundle.js"></script>
+</head>
+<body ng-app="app">
+  <section class="Redactor" ng-controller="Redactor">
+    <div class="Redactor-blocks" ng-repeat="block in blocks">
+      <article class="Block">
+        <div class="Block-handlers">
+          <div class="Block-icon Block-icon--settings"></div>
+          <div class="Block-icon Block-icon--delete"></div>
+        </div>
+        <ng-switch expression="block.type">
+          <ng-switch-when value="'text'" ng-bind-html="block.content" />
+        </ng-switch>
+      </article>
+    </div>
+  </section>
+</body>
+</html>

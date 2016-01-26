@@ -1,0 +1,82 @@
+$primary-color: #56b9fa;
+$secondary-color: #ff383f;
+$control-border-radius: 2px;
+$panel-size: 22px;
+
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+
+html {
+  height: 100%;
+}
+body {
+  min-height: 100%;
+  background: url(transparent.png);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+
+.Redactor {
+  margin: 10vh auto;
+  max-width: 800px;
+  padding: 20px;
+  background: white;
+
+  &-blocks {}
+}
+
+
+.Block {
+  position: relative;
+
+  &:hover {
+    z-index: 1;
+    margin: -5px;
+    border: 5px solid $primary-color;
+    border-radius: $control-border-radius;
+  }
+  &-handlers {
+    position: absolute;
+    top: -5px;
+    bottom: -5px;
+    left: -$panel-size;
+    display: none;
+    width: $panel-size;
+    min-height: 2 * $panel-size;
+    background: $primary-color;
+    border-radius: $control-border-radius;
+    cursor: move;
+  }
+  &:hover &-handlers {
+    display: block;
+  }
+  &-icon {
+    position: absolute;
+    left: 0;
+    width: $panel-size;
+    height: $panel-size;
+    text-align: center;
+    color: white;
+    cursor: pointer;
+    font-size: $panel-size;
+
+    &:hover {
+      color: #1979c6;
+    }
+
+    &--settings {
+      top: 0;
+      line-height: 1;
+      background: url(settings.svg) 50% 50% / 80% no-repeat;
+    }
+    &--delete {
+      bottom: 0;
+      line-height: 0.82;
+      background: url(delete.svg) 50% 50% / 80% no-repeat;
+    }
+  }
+}
