@@ -35,6 +35,22 @@ angular
         $scope.isHover = false;
         $scope.setOuterHoverStatus && $scope.setOuterHoverStatus(false);
       };
+      $scope.removeBlock = index => {
+        $scope.build.blocks.splice(index, 1);
+      };
+      $scope.addBlock = (type, index) => $scope.build.blocks.splice(index + 1, 0, JSON.parse(JSON.stringify(buildExample.blocks[type])));
+      $scope.t = {
+        header: 'Заголовок',
+        text: 'Текст',
+        links: 'Ссылки',
+        link: 'Ссылка',
+        form: 'Форма',
+        popup: 'Попап',
+        field: 'Поле формы',
+        input: 'Поле ввода',
+        button: 'Кнопка',
+        screen: 'Состояние'
+      };
 
     }],
     compile: function(element) {
