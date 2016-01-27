@@ -1,5 +1,6 @@
 const angular = require('angular');
 const angularSanitize = require('angular-sanitize');
+const buildExample = require('./build-example');
 
 
 require('./styles.scss');
@@ -9,29 +10,7 @@ angular
   .module('app', [angularSanitize])
   .controller('Redactor', ['$scope', ($scope) => {
 
-    $scope.blocks = [
-      {
-        type: 'text',
-        content: '1'
-      },
-      {
-        type: 'text',
-        content: '2'
-      },
-      {
-        type: 'container',
-        blocks: [
-          {
-            type: 'text',
-            content: '3'
-          },
-          {
-            type: 'text',
-            content: '4'
-          }
-        ]
-      }
-    ];
+    $scope.blocks = buildExample;
 
   }])
   .directive('blockCollection', ['RecursionHelper', (RecursionHelper) => ({

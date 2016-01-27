@@ -7,7 +7,50 @@
 </head>
 <body ng-app="app" ng-controller="Redactor">
   <div class="Redactor">
-    <block-collection blocks="blocks" set-outer-hover-status="noop" />
+    <!--<block-collection blocks="blocks" set-outer-hover-status="noop" />-->
+
+
+    <div class="Screen">
+      <div class="Screen-name"></div>
+      <div class="Popup" style="background: linear-gradient(to bottom right, #db190f 0%, #df1165 100%); border-radius: 15px;">
+        <div class="Popup-close">&times;</div>
+        <div class="Header">Время грандиозных скидок!</div>
+        <div class="Text">Подпишись на еженедельную рассылку с самыми актуальными распродажами и новыми коллекциями</div>
+        <div class="Form">
+          <div class="Text">Оставьте нам свое имя и e-mail</div>
+          <div class="Field">
+            <input type="text" class="Input" placeholder="Имя, сестра!" />
+          </div>
+          <div class="Field">
+            <input type="text" class="Input" placeholder="Электропочта" />
+          </div>
+          <div class="Button">Отправить скидку на почту</div>
+          <div class="Text Text--small">Нажимая кнопку «Отправить», я выражаю свое согласие на получение рекламных материалов и обработку моих персональных данных</div>
+          <div class="Links Links--center">
+            <div class="Link">Пользовательское соглашение</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="Screen">
+      <div class="Screen-name"></div>
+      <div class="Popup" style="background: linear-gradient(to bottom right, #db190f 0%, #df1165 100%); border-radius: 15px;">
+        <div class="Popup-close">&times;</div>
+        <div class="Header">Внимательно прочтите</div>
+        <div class="Text">Текст пользовательского соглашения</div>
+        <div class="Button">Вернуться к баранам</div>
+      </div>
+    </div>
+    <div class="Screen">
+      <div class="Screen-name"></div>
+      <div class="Popup" style="background: linear-gradient(to bottom right, #db190f 0%, #df1165 100%); border-radius: 15px;">
+        <div class="Popup-close">&times;</div>
+        <div class="Header">Спасибо</div>
+        <div class="Text">Мы внесли Вас в список рассылки</div>
+        <div class="Button">Закрыть</div>
+      </div>
+    </div>
+
   </div>
 </body>
 </html>
