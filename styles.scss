@@ -25,7 +25,9 @@ body {
   max-width: 800px;
   padding: 20px;
   background: white;
+}
 
+.Build {
   &-blocks {}
 }
 
@@ -33,11 +35,14 @@ body {
 .Block {
   position: relative;
 
-  &:hover {
+  .Build.is-active &:hover {
     z-index: 1;
     margin: -5px;
     border: 5px solid $primary-color;
     border-radius: $control-border-radius;
+  }
+  .Build.is-active &.is-delete:hover {
+    border-color: $secondary-color;
   }
   &-handlers {
     position: absolute;
@@ -51,8 +56,11 @@ body {
     border-radius: $control-border-radius;
     cursor: move;
   }
-  &:hover &-handlers {
+  .Build.is-active &:hover &-handlers {
     display: block;
+  }
+  .Build.is-active &.is-delete:hover &-handlers {
+    background: $secondary-color;
   }
   &-icon {
     position: absolute;
@@ -63,9 +71,10 @@ body {
     color: white;
     cursor: pointer;
     font-size: $panel-size;
+    opacity: 0.8;
 
     &:hover {
-      color: #1979c6;
+      opacity: 1;
     }
 
     &--settings {
@@ -76,7 +85,7 @@ body {
     &--delete {
       bottom: 0;
       line-height: 0.82;
-      background: url(delete.svg) 50% 50% / 80% no-repeat;
+      background: url(delete.svg) 50% 50% / 50% no-repeat;
     }
   }
 }
