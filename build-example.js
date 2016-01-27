@@ -3,7 +3,7 @@ module.exports = {
     canReceive: ['state'],
     blocks: [
       {
-        type: 'state',
+        type: 'screen',
         name: 'form',
         build: {
           canReceive: ['popup', 'ribbon'],
@@ -11,14 +11,16 @@ module.exports = {
           blocks: [
             {
               type: 'popup',
-              background: ['#0563e6', '#1b8cac'],
-              borderRadius: 0,
+              background: ['#2a2c2b', '#2a2c2b'],
+              borderRadius: 3,
               build: {
                 canReceive: ['header', 'text', 'form', 'links'],
                 blocks: [
                   {
                     type: 'header',
-                    content: 'Время грандиозных скидок!'
+                    align: 'center',
+                    content: 'Время грандиозных скидок!',
+                    color: '#ffffff'
                   },
                   {
                     type: 'text',
@@ -30,6 +32,8 @@ module.exports = {
                   {
                     type: 'form',
                     formType: 'login',
+                    background: ['#f46b3f', '#df371b'],
+                    borderRadius: 3,
                     build: {
                       canReceive: ['text', 'field', 'button', 'links'],
                       blocks: [
@@ -48,7 +52,8 @@ module.exports = {
                               {
                                 type: 'input',
                                 name: 'name',
-                                placeholder: 'Имя, сестра!'
+                                placeholder: 'Имя, сестра!',
+                                borderRadius: 3
                               }
                             ]
                           }
@@ -61,7 +66,8 @@ module.exports = {
                               {
                                 type: 'input',
                                 name: 'email',
-                                placeholder: 'Электропочта'
+                                placeholder: 'Электропочта',
+                                borderRadius: 3
                               }
                             ]
                           }
@@ -77,8 +83,12 @@ module.exports = {
                           type: 'button',
                           content: 'Отправить скидку на почту',
                           action: ['submit'],
+                          size: 'normal',
                           color: '#ffffff',
-                          background: '#092f7c'
+                          background: '#a4312c',
+                          borderWidth: 0,
+                          borderColor: '#000000',
+                          borderRadius: 3
                         },
                         {
                           type: 'links',
@@ -89,7 +99,8 @@ module.exports = {
                               {
                                 type: 'link',
                                 content: 'Пользовательское соглашение',
-                                action: ['to-screen', 'agreement']
+                                action: ['to-screen', 'agreement'],
+                                color: '#ffffff'
                               }
                             ]
                           }
@@ -104,7 +115,7 @@ module.exports = {
         }
       },
       {
-        type: 'state',
+        type: 'screen',
         name: 'agreement',
         build: {
           canReceive: ['popup', 'ribbon'],
@@ -112,14 +123,16 @@ module.exports = {
           blocks: [
             {
               type: 'popup',
-              background: ['#0563e6', '#1b8cac'],
-              borderRadius: 0,
+              background: ['#2a2c2b', '#2a2c2b'],
+              borderRadius: 3,
               build: {
                 canReceive: ['header', 'text', 'form', 'links'],
                 blocks: [
                   {
                     type: 'header',
-                    content: 'Внимательно прочтите'
+                    align: 'center',
+                    content: 'Внимательно прочтите',
+                    color: '#ffffff'
                   },
                   {
                     type: 'text',
@@ -132,8 +145,12 @@ module.exports = {
                     type: 'button',
                     content: 'Вернуться к баранам',
                     action: ['to-screen', 'form'],
+                    size: 'normal',
                     color: '#ffffff',
-                    background: '#092f7c'
+                    background: '#4c4c47',
+                    borderWidth: 0,
+                    borderColor: '#000000',
+                    borderRadius: 3
                   }
                 ]
               }
@@ -142,7 +159,7 @@ module.exports = {
         }
       },
       {
-        type: 'state',
+        type: 'screen',
         name: 'success',
         build: {
           canReceive: ['popup', 'ribbon'],
@@ -150,14 +167,16 @@ module.exports = {
           blocks: [
             {
               type: 'popup',
-              background: ['#0563e6', '#1b8cac'],
-              borderRadius: 0,
+              background: ['#2a2c2b', '#2a2c2b'],
+              borderRadius: 3,
               build: {
                 canReceive: ['header', 'text', 'form', 'links'],
                 blocks: [
                   {
                     type: 'header',
-                    content: 'Спасибо!'
+                    align: 'center',
+                    content: 'Спасибо!',
+                    color: '#ffffff'
                   },
                   {
                     type: 'text',
@@ -170,8 +189,12 @@ module.exports = {
                     type: 'button',
                     content: 'Закрыть',
                     action: ['close'],
+                    size: 'normal',
                     color: '#ffffff',
-                    background: '#092f7c'
+                    background: '#4c4c47',
+                    borderWidth: 0,
+                    borderColor: '#000000',
+                    borderRadius: 3
                   }
                 ]
               }

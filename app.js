@@ -10,12 +10,12 @@ angular
   .module('app', [angularSanitize])
   .controller('Redactor', ['$scope', ($scope) => {
 
-    $scope.blocks = buildExample;
+    $scope.build = buildExample.build;
 
   }])
   .directive('blockCollection', ['RecursionHelper', (RecursionHelper) => ({
     scope: {
-      blocks: '=',
+      build: '=',
       setOuterHoverStatus: '='
     },
     templateUrl: 'templates/block-collection.html',

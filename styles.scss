@@ -7,8 +7,11 @@ $panel-size: 22px;
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
+
+// Страница
 
 html {
   height: 100%;
@@ -20,6 +23,8 @@ body {
 }
 
 
+// Редактор
+
 .Redactor {
   margin: 10vh auto;
   max-width: 800px;
@@ -27,21 +32,26 @@ body {
   background: white;
 }
 
+
+// Коллекция блоков
+
 .Build {
   &-blocks {}
 }
 
 
+// Блок
+
 .Block {
   position: relative;
 
-  .Build.is-active &:hover {
+  &.is-controlsEnabled:hover {
     z-index: 1;
     margin: -5px;
     border: 5px solid $primary-color;
     border-radius: $control-border-radius;
   }
-  .Build.is-active &.is-delete:hover {
+  &.is-controlsEnabled.is-delete:hover {
     border-color: $secondary-color;
   }
   &-handlers {
@@ -56,10 +66,10 @@ body {
     border-radius: $control-border-radius;
     cursor: move;
   }
-  .Build.is-active &:hover &-handlers {
+  &.is-controlsEnabled:hover > &-handlers {
     display: block;
   }
-  .Build.is-active &.is-delete:hover &-handlers {
+  &.is-controlsEnabled.is-delete:hover > &-handlers {
     background: $secondary-color;
   }
   &-icon {
@@ -95,12 +105,19 @@ body {
 // Стили прототипа
 
 .Screen {
-  &-name {}
+  display: inline-block;
+  margin-bottom: 40px;
+
+  &-name {
+    margin-bottom: 15px;
+    font-size: 13px;
+    color: #999;
+  }
 }
 .Popup {
   position: relative;
-  width: 500px;
-  padding: 20px 30px;
+  width: 620px;
+  padding: 50px;
   box-shadow: 0 1px 60px rgba(black, 0.4);
 
   &-close {
@@ -114,32 +131,65 @@ body {
   }
 }
 .Header {
-  padding: 20px 0;
+  padding: 10px 0 30px;
   line-height: 30px;
-  font-weight: lighter;
-  font-size: 26px;
-  color: white;
+  font-weight: 100;
+  font-size: 32px;
+
+  &--left {
+    text-align: left;
+  }
+  &--right {
+    text-align: right;
+  }
+  &--center {
+    text-align: center;
+  }
 }
 .Text {
-  font-size: 16px;
-  color: white;
+  padding-bottom: 20px;
+  font-weight: 300;
 
+  &--left {
+    text-align: left;
+  }
+  &--right {
+    text-align: right;
+  }
+  &--center {
+    text-align: center;
+  }
+  &--normal {
+    font-size: 16px;
+  }
   &--small {
     font-size: 13px;
   }
 }
 .Form {
-  padding: 0;
+  padding: 30px;
 }
 .Field {
+  padding-bottom: 20px;
   position: relative;
 }
 .Input {
-  width: 100%;
-}
-.Button {
+  height: 2.5em;
+  padding: 0 1em;
   width: 100%;
   font-size: 16px;
+  border: none;
+}
+.Button {
+  height: 2.5em;
+  width: 100%;
+
+  &--normal {
+    font-size: 22px;
+  }
+  &--small {
+    font-size: 16px;
+  }
 }
 .Links {
   padding: 10px;
@@ -162,6 +212,5 @@ body {
   display: inline-block;
   line-height: 0.95em;
   font-size: 13px;
-  color: white;
   border-bottom: 1px dashed white;
 }
