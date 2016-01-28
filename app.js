@@ -129,5 +129,17 @@ angular
         };
       }
     };
-  }]);
+  }])
+  .directive('uploadFile', [function () {
+    return {
+      link: function(scope, element) {
+        element.bind('change', () => {
+          scope.$apply(function() {
+            scope.block.backgroundImage = 'http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/wood_pattern.png'
+            console.log("scope.block", scope.block);
+          })
+        });
+      }
+    }
+  }]);;
 

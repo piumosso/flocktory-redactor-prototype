@@ -70,9 +70,9 @@
       <input type="radio" ng-model="block.action[0]" value="submit" />
       <div>Отправка формы</div>
     </label>
-    <div ng-show="newBlocks[block.type].action[0] === 'to-screen'">
+    <div ng-show="block.action[0] === 'to-screen'">
       <div class="Setting-formInlineLabel">
-        Состояние
+        Переход к состоянию
       </div>
       <input type="text" class="Setting-formInput" ng-model="block.action[1]" />
     </div>
@@ -116,6 +116,12 @@
                   color-picker-swatch-bootstrap="false"
                   color-picker-pos="'bottom left'"
                   color-picker-case="'lower'"></color-picker>
+  </div>
+</div>
+<div class="Setting" ng-show="newBlocks[block.type].backgroundImage">
+  <div class="Setting-title">Фоновое изображение</div>
+  <div class="Setting-form">
+    <input type="file" upload-file />
   </div>
 </div>
 <div class="Setting" ng-show="newBlocks[block.type].borderColor">

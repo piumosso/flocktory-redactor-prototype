@@ -261,6 +261,7 @@ module.exports = {
       type: 'form',
       formType: 'login',
       background: ['#f46b3f', '#df371b'],
+      backgroundImage: ' ',
       borderRadius: 3,
       build: {
         canReceive: ['text', 'field', 'button', 'links'],
@@ -270,6 +271,7 @@ module.exports = {
     popup: {
       type: 'popup',
       background: ['#2a2c2b', '#2a2c2b'],
+      backgroundImage: ' ',
       borderRadius: 3,
       build: {
         canReceive: ['header', 'text', 'form', 'links'],

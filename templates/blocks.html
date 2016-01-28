@@ -33,13 +33,13 @@
   </div>
   <div ng-switch-when="form">
     <div class="Form"
-         style="background: linear-gradient(to bottom right, {{ block.background[0] }} 0%, {{ block.background[1]}} 100%); border-radius: {{ block.borderRadius }}px">
+         style="background: linear-gradient(to bottom right, {{ block.background[0] }} 0%, {{ block.background[1]}} 100%); border-radius: {{ block.borderRadius }}px; {{ !block.backgroundImage || 'background: url(' + block.backgroundImage + ')' }};">
       <block-collection build="block.build" set-outer-hover-status="setInnerHoverStatus" />
     </div>
   </div>
   <div ng-switch-when="popup">
     <div class="Popup"
-         style="background: linear-gradient(to bottom right, {{ block.background[0] }} 0%, {{ block.background[1]}} 100%); border-radius: {{ block.borderRadius }}px">
+         style="background: linear-gradient(to bottom right, {{ block.background[0] }} 0%, {{ block.background[1]}} 100%); border-radius: {{ block.borderRadius }}px; {{ !block.backgroundImage || 'background: url(' + block.backgroundImage + ')' }};">
       <div class="Popup-close">&times;</div>
       <block-collection build="block.build" set-outer-hover-status="setInnerHoverStatus" />
     </div>
