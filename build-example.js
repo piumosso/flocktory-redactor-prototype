@@ -85,7 +85,7 @@ module.exports = {
                           action: ['submit'],
                           size: 'normal',
                           color: '#ffffff',
-                          background: '#a4312c',
+                          background: ['#a4312c', '#a4312c'],
                           borderWidth: 0,
                           borderColor: '#000000',
                           borderRadius: 3
@@ -147,7 +147,7 @@ module.exports = {
                     action: ['to-screen', 'form'],
                     size: 'normal',
                     color: '#ffffff',
-                    background: '#4c4c47',
+                    background: ['#4c4c47', '#4c4c47'],
                     borderWidth: 0,
                     borderColor: '#000000',
                     borderRadius: 3
@@ -191,7 +191,7 @@ module.exports = {
                     action: ['close'],
                     size: 'normal',
                     color: '#ffffff',
-                    background: '#4c4c47',
+                    background: ['#4c4c47', '#4c4c47'],
                     borderWidth: 0,
                     borderColor: '#000000',
                     borderRadius: 3
@@ -272,7 +272,7 @@ module.exports = {
       action: ['close'],
       size: 'normal',
       color: '#ffffff',
-      background: '#4c4c47',
+      background: ['#4c4c47', '#4c4c47'],
       borderWidth: 0,
       borderColor: '#000000',
       borderRadius: 3

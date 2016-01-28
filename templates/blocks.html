@@ -1,0 +1,67 @@
+<div ng-switch="block.type">
+  <div ng-switch-when="header">
+    <div class="Header"
+         ng-class="'Header--' + block.align"
+         style="color: {{ block.color }}">
+      <span class="ContentEditable" ng-bind-html="block.content" contenteditable />
+    </div>
+  </div>
+  <div ng-switch-when="text">
+    <div class="Text"
+         ng-class="'Text--' + block.align + ' Text--' + block.size"
+         style="color: {{ block.color }}">
+      <span class="ContentEditable" ng-bind-html="block.content" contenteditable />
+    </div>
+  </div>
+  <div ng-switch-when="links">
+    <div class="Links" ng-class="'Links--' + block.align">
+      <block-collection build="block.build" set-outer-hover-status="setInnerHoverStatus" />
+    </div>
+  </div>
+  <div ng-switch-when="link">
+    <div class="Link"
+         style="color: {{ block.color }}">
+      <span class="ContentEditable" ng-bind-html="block.content" contenteditable />
+    </div>
+  </div>
+  <div ng-switch-when="form">
+    <div class="Form"
+         style="background: linear-gradient(to bottom right, {{ block.background[0] }} 0%, {{ block.background[1]}} 100%); border-radius: {{ block.borderRadius }}px">
+      <block-collection build="block.build" set-outer-hover-status="setInnerHoverStatus" />
+    </div>
+  </div>
+  <div ng-switch-when="popup">
+    <div class="Popup"
+         style="background: linear-gradient(to bottom right, {{ block.background[0] }} 0%, {{ block.background[1]}} 100%); border-radius: {{ block.borderRadius }}px">
+      <div class="Popup-close">&times;</div>
+      <block-collection build="block.build" set-outer-hover-status="setInnerHoverStatus" />
+    </div>
+  </div>
+  <div ng-switch-when="field">
+    <div class="Field">
+      <block-collection build="block.build" set-outer-hover-status="setInnerHoverStatus" />
+    </div>
+  </div>
+  <div ng-switch-when="input">
+    <input type="text"
+           class="Input"
+           placeholder="{{ block.placeholder }}"
+           name="{{ block.name }}"
+           style="border-radius: {{ block.borderRadius }}px"/>
+  </div>
+  <div ng-switch-when="button">
+    <button class="Button Button--{{ block.size }}"
+            style="color: {{ block.color }}; border-сolor: {{ block.borderColor }}; background: {{ block.background }}; border: {{ block.borderWidth }}px solid; border-radius: {{ block.borderRadius }}px">
+      <span class="ContentEditable" ng-bind-html="block.content" contenteditable />
+    </button>
+  </div>
+  <div ng-switch-when="screen">
+    <div class="Screen">
+      <div class="Screen-name">
+        Состояние
+        <span class="ContentEditable" ng-bind-html="block.name" contenteditable />
+      </div>
+      <block-collection build="block.build" set-outer-hover-status="setInnerHoverStatus" />
+    </div>
+  </div>
+</div>

@@ -1,0 +1,139 @@
+<div class="Setting" ng-show="block.name">
+  <div class="Setting-title">Название</div>
+  <div class="Setting-form">
+    <input type="text" class="Setting-formInput" ng-model="block.name">
+  </div>
+</div>
+<div class="Setting" ng-show="block.formType">
+  <div class="Setting-title">Тип формы</div>
+  <div class="Setting-form">
+    <label>
+      <input type="radio" ng-model="block.formType" value="login" />
+      <div>Сбор емейлов</div>
+    </label>
+    <label>
+      <input type="radio" ng-model="block.formType" value="feedback" />
+      <div>Фидбек</div>
+    </label>
+  </div>
+</div>
+<div class="Setting" ng-show="block.size">
+  <div class="Setting-title">Размер</div>
+  <div class="Setting-form">
+    <label>
+      <input type="radio" ng-model="block.size" value="normal" />
+      <div>Нормальный</div>
+    </label>
+    <label>
+      <input type="radio" ng-model="block.size" value="small" />
+      <div>Маленький</div>
+    </label>
+  </div>
+</div>
+<div class="Setting" ng-show="block.align">
+  <div class="Setting-title">Выравнивание</div>
+  <div class="Setting-form">
+    <label>
+      <input type="radio" ng-model="block.align" value="left" />
+      <div>Влево</div>
+    </label>
+    <label>
+      <input type="radio" ng-model="block.align" value="center" />
+      <div>По центру</div>
+    </label>
+    <label>
+      <input type="radio" ng-model="block.align" value="right" />
+      <div>Вправо</div>
+    </label>
+  </div>
+</div>
+<div class="Setting" ng-show="block.action">
+  <div class="Setting-title">Действие при клике</div>
+  <div class="Setting-form">
+    <label class="v">
+      <input type="radio" ng-model="block.action[0]" value="to-screen" />
+      <div>
+        Переход к состоянию
+      </div>
+    </label>
+    <label class="v">
+      <input type="radio" ng-model="block.action[0]" value="close" />
+      <div>Закрытие</div>
+    </label>
+    <label class="v">
+      <input type="radio" ng-model="block.action[0]" value="submit" />
+      <div>Отправка формы</div>
+    </label>
+    <div ng-show="block.action[0] === 'to-screen'">
+      <div class="Setting-formInlineLabel">
+        Состояние
+      </div>
+      <input type="text" class="Setting-formInput" ng-model="block.action[1]" />
+    </div>
+  </div>
+</div>
+<div class="Setting" ng-show="block.placeholder">
+  <div class="Setting-title">Плейсхолдер</div>
+  <div class="Setting-form">
+    <input type="text" class="Setting-formInput" ng-model="block.placeholder">
+  </div>
+</div>
+<div class="Setting" ng-show="block.color">
+  <div class="Setting-title">Цвет текста</div>
+  <div class="Setting-form">
+    <color-picker ng-model="block.color"
+                  color-picker-format="'hex'"
+                  color-picker-swatch="true"
+                  color-picker-swatch-pos="'left'"
+                  color-picker-alpha="false"
+                  color-picker-swatch-bootstrap="false"
+                  color-picker-pos="'bottom left'"
+                  color-picker-case="'lower'"></color-picker>
+  </div>
+</div>
+<div class="Setting" ng-show="block.background">
+  <div class="Setting-title">Фон</div>
+  <div class="Setting-form">
+    <color-picker ng-model="block.background[0]"
+                  color-picker-format="'hex'"
+                  color-picker-swatch="true"
+                  color-picker-swatch-pos="'left'"
+                  color-picker-alpha="false"
+                  color-picker-swatch-bootstrap="false"
+                  color-picker-pos="'bottom left'"
+                  color-picker-case="'lower'"></color-picker>
+    <color-picker ng-model="block.background[1]"
+                  color-picker-format="'hex'"
+                  color-picker-swatch="true"
+                  color-picker-swatch-pos="'left'"
+                  color-picker-alpha="false"
+                  color-picker-swatch-bootstrap="false"
+                  color-picker-pos="'bottom left'"
+                  color-picker-case="'lower'"></color-picker>
+  </div>
+</div>
+<div class="Setting" ng-show="block.borderColor">
+  <div class="Setting-title">Цвет границы</div>
+  <div class="Setting-form">
+    <color-picker ng-model="block.borderColor"
+                  color-picker-format="'hex'"
+                  color-picker-swatch="true"
+                  color-picker-swatch-pos="'left'"
+                  color-picker-alpha="false"
+                  color-picker-swatch-bootstrap="false"
+                  color-picker-pos="'bottom left'"
+                  color-picker-case="'lower'"></color-picker>
+  </div>
+</div>
+<div class="Setting" ng-show="block.borderRadius">
+  <div class="Setting-title">Радиус скругления</div>
+  <div class="Setting-form">
+    <input type="number" class="Setting-formInput" min="0" ng-model="block.borderRadius">
+  </div>
+</div>
+<div class="Setting" ng-show="block.borderWidth">
+  <div class="Setting-title">Толщина границы</div>
+  <div class="Setting-form">
+    <input type="number" class="Setting-formInput" min="0" ng-model="block.borderWidth">
+  </div>
+</div>

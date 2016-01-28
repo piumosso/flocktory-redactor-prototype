@@ -24,6 +24,13 @@ module.exports = {
         ]
       },
       {
+        test: /\.css/,
+        loaders: [
+          'style',
+          'css'
+        ]
+      },
+      {
         test: /\.(svg|png)$/,
         loader: 'url?limit=25000'
       }

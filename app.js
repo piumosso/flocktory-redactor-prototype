@@ -1,15 +1,19 @@
 const angular = require('angular');
 const angularSanitize = require('angular-sanitize');
-const angularSortable = require('sortablejs/ng-sortable');
 const buildExample = require('./build-example');
+window.tinycolor = require('tinycolor2');
+require('angularjs-color-picker');
+require('sortablejs/ng-sortable');
 
 
 require('./styles.scss');
+require('angularjs-color-picker/angularjs-color-picker.css');
 
 
 angular
   .module('app', [
     angularSanitize,
+    'color.picker',
     'ng-sortable'
   ])
   .controller('Redactor', ['$scope', '$rootScope', ($scope, $rootScope) => {
