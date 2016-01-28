@@ -376,6 +376,9 @@ body {
   &--small {
     font-size: 13px;
   }
+  &--withoutSpase {
+    padding-bottom: 0;
+  }
 }
 .Form {
   padding: 30px;
@@ -391,6 +394,17 @@ body {
   font-size: 16px;
   font-weight: 300;
   border: none;
+}
+.Checkbox {
+  height: 2.5em;
+  font-size: 16px;
+  font-weight: 300;
+  color: white;
+
+  input {
+    margin-right: 3px;
+    vertical-align: middle;
+  }
 }
 .Button {
   height: 2.5em;

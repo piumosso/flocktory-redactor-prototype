@@ -47,13 +47,21 @@ module.exports = {
                         {
                           type: 'field',
                           build: {
-                            canReceive: ['input', 'checkbox', 'text'],
+                            canReceive: ['input', 'checkbox', 'error', 'text'],
+                            maxLength: 2,
                             blocks: [
                               {
                                 type: 'input',
                                 name: 'name',
                                 placeholder: 'Имя, сестра!',
                                 borderRadius: 3
+                              },
+                              {
+                                type: 'error',
+                                content: 'Укажите своё имя',
+                                size: 'small',
+                                align: 'right',
+                                color: '#990000'
                               }
                             ]
                           }
@@ -61,13 +69,21 @@ module.exports = {
                         {
                           type: 'field',
                           build: {
-                            canReceive: ['input', 'checkbox', 'text'],
+                            canReceive: ['input', 'checkbox', 'error', 'text'],
+                            maxLength: 2,
                             blocks: [
                               {
                                 type: 'input',
                                 name: 'email',
                                 placeholder: 'Электропочта',
                                 borderRadius: 3
+                              },
+                              {
+                                type: 'error',
+                                content: 'Ведите корректный адрес почты',
+                                size: 'small',
+                                align: 'right',
+                                color: '#990000'
                               }
                             ]
                           }
@@ -220,6 +236,13 @@ module.exports = {
       align: 'center',
       color: '#ffffff'
     },
+    error: {
+      type: 'error',
+      content: '',
+      size: 'small',
+      align: 'right',
+      color: '#ff0000'
+    },
     links: {
       type: 'links',
       align: 'center',
@@ -256,7 +279,8 @@ module.exports = {
     field: {
       type: 'field',
       build: {
-        canReceive: ['input', 'checkbox', 'text'],
+        canReceive: ['input', 'checkbox', 'error', 'text'],
+        maxLength: 2,
         blocks: []
       }
     },
@@ -265,6 +289,12 @@ module.exports = {
       name: '',
       placeholder: '',
       borderRadius: 3
+    },
+    checkbox: {
+      type: 'checkbox',
+      name: '',
+      content: '',
+      color: '#ffffff'
     },
     button: {
       type: 'button',

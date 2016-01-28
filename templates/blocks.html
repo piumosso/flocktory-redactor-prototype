@@ -13,6 +13,13 @@
       <span class="ContentEditable" ng-bind-html="block.content" contenteditable />
     </div>
   </div>
+  <div ng-switch-when="error">
+    <div class="Text Text--withoutSpase"
+         ng-class="'Text--' + block.align + ' Text--' + block.size"
+         style="color: {{ block.color }}">
+      <span class="ContentEditable" ng-bind-html="block.content" contenteditable />
+    </div>
+  </div>
   <div ng-switch-when="links">
     <div class="Links" ng-class="'Links--' + block.align">
       <block-collection build="block.build" set-outer-hover-status="setInnerHoverStatus" />
@@ -49,9 +56,15 @@
            name="{{ block.name }}"
            style="border-radius: {{ block.borderRadius }}px"/>
   </div>
+  <div ng-switch-when="checkbox">
+    <div class="Checkbox" style="color: {{ block.color }};">
+      <input type="checkbox" />
+      <span class="ContentEditable" ng-bind-html="block.content" contenteditable />
+    </div>
+  </div>
   <div ng-switch-when="button">
     <button class="Button Button--{{ block.size }}"
-            style="color: {{ block.color }}; border-сolor: {{ block.borderColor }}; background: {{ block.background }}; border: {{ block.borderWidth }}px solid; border-radius: {{ block.borderRadius }}px">
+            style="color: {{ block.color }}; border-сolor: {{ block.borderColor }}; background: linear-gradient(to bottom right, {{ block.background[0] }} 0%, {{ block.background[1]}} 100%); border: {{ block.borderWidth }}px solid; border-radius: {{ block.borderRadius }}px">
       <span class="ContentEditable" ng-bind-html="block.content" contenteditable />
     </button>
   </div>

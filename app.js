@@ -71,6 +71,8 @@ angular
         popup: 'Попап',
         field: 'Поле формы',
         input: 'Поле ввода',
+        checkbox: 'Галочка',
+        error: 'Сообщение об ошибке',
         button: 'Кнопка',
         screen: 'Состояние'
       };
