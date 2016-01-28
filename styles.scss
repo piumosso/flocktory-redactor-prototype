@@ -51,37 +51,62 @@ body {
 
 .Block {
   position: relative;
+  margin: -5px;
+  border: 5px solid transparent;
+  border-radius: $control-border-radius;
 
-  &.is-controlsEnabled:hover {
+  &.is-controlsEnabled:hover,
+  &.is-controlsFixed {
     z-index: 1;
-    margin: -5px;
-    border: 5px solid $primary-color;
-    border-radius: $control-border-radius;
+    border-color: $primary-color;
+  }
+  &.is-controlsFixed,
+  &.is-controlsFixed:hover {
+    z-index: 2;
   }
   &.is-controlsEnabled.is-delete:hover {
     border-color: $secondary-color;
   }
-  &-handlers {
+  &-panel {
     position: absolute;
     top: -5px;
     bottom: -5px;
-    left: -$panel-size;
+    right: 100%;
     display: none;
     width: $panel-size;
     min-height: 2 * $panel-size;
     background: $primary-color;
     border-radius: $control-border-radius;
-    cursor: move;
+
+    &.is-opened {
+      width: auto;
+      min-height: 100%;
+      bottom: auto;
+    }
   }
-  &.is-controlsEnabled:hover > &-handlers {
+  &.is-controlsEnabled:hover > &-panel,
+  &.is-controlsFixed > &-panel {
     display: block;
   }
-  &.is-controlsEnabled.is-delete:hover > &-handlers {
+  &.is-controlsEnabled.is-delete:hover > &-panel {
     background: $secondary-color;
+  }
+  &-settings {
+    width: 240px;
+    display: none;
+    padding: 10px 30px 10px 10px;
+    background: $primary-color;
+    border-radius: $control-border-radius;
+  }
+  &.is-controlsEnabled.is-delete:hover > &-panel &-settings {
+    background: $secondary-color;
+  }
+  &-panel.is-opened &-settings {
+    display: block;
   }
   &-icon {
     position: absolute;
-    left: 0;
+    right: 0;
     width: $panel-size;
     height: $panel-size;
     text-align: center;

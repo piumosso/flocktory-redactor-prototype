@@ -12,17 +12,24 @@
       </div>
     </div>
   </div>
-  <div class="Build-blocks">
+  <div class="Build-blocks" ng-sortable="sortableConfig">
     <article class="Block"
              ng-repeat="block in build.blocks track by $index"
-             ng-class="{'is-delete': block.$isDelete, 'is-controlsEnabled': isActive()}"
+             ng-class="{'is-delete': block.$isDelete, 'is-controlsEnabled': isActive(), 'is-controlsFixed': block.$settingsIsOpened}"
              ng-init="$i = $index">
-      <div class="Block-handlers">
-        <div class="Block-icon Block-icon--settings"></div>
+      <div class="Block-panel" ng-class="{'is-opened': block.$settingsIsOpened}">
+        <div class="Block-icon Block-icon--settings" ng-click="toggleSettings(block)"></div>
         <div class="Block-icon Block-icon--delete"
              ng-mouseenter="block.$isDelete = true"
              ng-mouseleave="block.$isDelete = false"
              ng-click="removeBlock($index)"></div>
+        <div class="Block-settings">
+          Форма! Тут будет форма! Урааа!
+          Форма! Тут будет форма! Урааа!
+          Форма! Тут будет форма! Урааа!
+          Форма! Тут будет форма! Урааа!
+          Форма! Тут будет форма! Урааа!
+        </div>
       </div>
       <div class="Adder" ng-show="build.canReceive.length && (build.maxLength ? build.blocks.length < build.maxLength : true)">
         <div class="Adder-wrapper">

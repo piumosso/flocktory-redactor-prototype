@@ -1,5 +1,6 @@
 const angular = require('angular');
 const angularSanitize = require('angular-sanitize');
+const angularSortable = require('sortablejs/ng-sortable');
 const buildExample = require('./build-example');
 
 
@@ -7,10 +8,28 @@ require('./styles.scss');
 
 
 angular
-  .module('app', [angularSanitize])
-  .controller('Redactor', ['$scope', ($scope) => {
+  .module('app', [
+    angularSanitize,
+    'ng-sortable'
+  ])
+  .controller('Redactor', ['$scope', '$rootScope', ($scope, $rootScope) => {
 
     $scope.build = buildExample.build;
+    $rootScope.toggleSettings = targetBlock => {
+      const toggle = (build) => {
+        build.blocks.forEach(block => {
+          if (block === targetBlock) {
+            block.$settingsIsOpened = !block.$settingsIsOpened;
+          } else {
+            block.$settingsIsOpened = false;
+          }
+          if (block.build) {
+            toggle(block.build);
+          }
+        });
+      };
+      toggle($scope.build);
+    };
 
   }])
   .directive('blockCollection', ['RecursionHelper', (RecursionHelper) => ({
@@ -19,7 +38,7 @@ angular
       setOuterHoverStatus: '='
     },
     templateUrl: 'templates/block-collection.html',
-    controller: ['$scope', $scope => {
+    controller: ['$scope', '$rootScope', ($scope, $rootScope) => {
 
       $scope.isHover = false;
       $scope.isInnerHover = false;
@@ -51,6 +70,8 @@ angular
         button: 'Кнопка',
         screen: 'Состояние'
       };
+      $scope.sortableConfig = {};
+      $scope.toggleSettings = $rootScope.toggleSettings;
 
     }],
     compile: function(element) {

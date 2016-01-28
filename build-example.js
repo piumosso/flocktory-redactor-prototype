@@ -213,8 +213,7 @@ module.exports = {
       content: '',
       color: '#ffffff'
     },
-    text:
-    {
+    text: {
       type: 'text',
       content: '',
       size: 'normal',
