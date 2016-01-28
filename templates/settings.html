@@ -1,10 +1,16 @@
-<div class="Setting" ng-show="block.name">
+<div class="Setting" ng-show="block.content">
+  <div class="Setting-title">Содержимое</div>
+  <div class="Setting-form">
+    <textarea type="text" class="Setting-formInput Setting-formInput--textarea" ng-model="block.content"></textarea>
+  </div>
+</div>
+<div class="Setting" ng-show="newBlocks[block.type].name">
   <div class="Setting-title">Название</div>
   <div class="Setting-form">
     <input type="text" class="Setting-formInput" ng-model="block.name">
   </div>
 </div>
-<div class="Setting" ng-show="block.formType">
+<div class="Setting" ng-show="newBlocks[block.type].formType">
   <div class="Setting-title">Тип формы</div>
   <div class="Setting-form">
     <label>
@@ -17,7 +23,7 @@
     </label>
   </div>
 </div>
-<div class="Setting" ng-show="block.size">
+<div class="Setting" ng-show="newBlocks[block.type].size">
   <div class="Setting-title">Размер</div>
   <div class="Setting-form">
     <label>
@@ -30,7 +36,7 @@
     </label>
   </div>
 </div>
-<div class="Setting" ng-show="block.align">
+<div class="Setting" ng-show="newBlocks[block.type].align">
   <div class="Setting-title">Выравнивание</div>
   <div class="Setting-form">
     <label>
@@ -47,7 +53,7 @@
     </label>
   </div>
 </div>
-<div class="Setting" ng-show="block.action">
+<div class="Setting" ng-show="newBlocks[block.type].action">
   <div class="Setting-title">Действие при клике</div>
   <div class="Setting-form">
     <label class="v">
@@ -64,7 +70,7 @@
       <input type="radio" ng-model="block.action[0]" value="submit" />
       <div>Отправка формы</div>
     </label>
-    <div ng-show="block.action[0] === 'to-screen'">
+    <div ng-show="newBlocks[block.type].action[0] === 'to-screen'">
       <div class="Setting-formInlineLabel">
         Состояние
       </div>
@@ -72,13 +78,13 @@
     </div>
   </div>
 </div>
-<div class="Setting" ng-show="block.placeholder">
+<div class="Setting" ng-show="newBlocks[block.type].placeholder">
   <div class="Setting-title">Плейсхолдер</div>
   <div class="Setting-form">
     <input type="text" class="Setting-formInput" ng-model="block.placeholder">
   </div>
 </div>
-<div class="Setting" ng-show="block.color">
+<div class="Setting" ng-show="newBlocks[block.type].color">
   <div class="Setting-title">Цвет текста</div>
   <div class="Setting-form">
     <color-picker ng-model="block.color"
@@ -91,7 +97,7 @@
                   color-picker-case="'lower'"></color-picker>
   </div>
 </div>
-<div class="Setting" ng-show="block.background">
+<div class="Setting" ng-show="newBlocks[block.type].background">
   <div class="Setting-title">Фон</div>
   <div class="Setting-form">
     <color-picker ng-model="block.background[0]"
@@ -112,7 +118,7 @@
                   color-picker-case="'lower'"></color-picker>
   </div>
 </div>
-<div class="Setting" ng-show="block.borderColor">
+<div class="Setting" ng-show="newBlocks[block.type].borderColor">
   <div class="Setting-title">Цвет границы</div>
   <div class="Setting-form">
     <color-picker ng-model="block.borderColor"
@@ -125,13 +131,13 @@
                   color-picker-case="'lower'"></color-picker>
   </div>
 </div>
-<div class="Setting" ng-show="block.borderRadius">
+<div class="Setting" ng-show="newBlocks[block.type].borderRadius">
   <div class="Setting-title">Радиус скругления</div>
   <div class="Setting-form">
     <input type="number" class="Setting-formInput" min="0" ng-model="block.borderRadius">
   </div>
 </div>
-<div class="Setting" ng-show="block.borderWidth">
+<div class="Setting" ng-show="newBlocks[block.type].borderWidth">
   <div class="Setting-title">Толщина границы</div>
   <div class="Setting-form">
     <input type="number" class="Setting-formInput" min="0" ng-model="block.borderWidth">

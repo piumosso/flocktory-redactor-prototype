@@ -82,6 +82,12 @@ body {
       width: auto;
       min-height: 100%;
       bottom: auto;
+
+      .m-settings-fixed & {
+        width: $panel-size;
+        bottom: -5px;
+        min-height: 2 * $panel-size;
+      }
     }
   }
   &.is-controlsEnabled:hover > &-panel,
@@ -92,17 +98,46 @@ body {
     background: $secondary-color;
   }
   &-settings {
+    text-align: left;
     width: 250px;
     display: none;
     padding: 10px 30px 10px 10px;
     background: $primary-color;
     border-radius: $control-border-radius;
+
+    .m-settings-fixed & {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: 0;
+      padding-bottom: 50px;
+    }
   }
   &.is-controlsEnabled.is-delete:hover > &-panel &-settings {
     background: $secondary-color;
   }
   &-panel.is-opened &-settings {
     display: block;
+  }
+  &-settingsClose {
+    color: white;
+    width: 100%;
+    margin-top: 20px;
+    height: 30px;
+    border: none;
+    background: darken($primary-color, 10%);
+    border-radius: $control-border-radius;
+    outline: none;
+    cursor: pointer;
+
+    .m-settings-fixed & {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      width: 230px;
+      margin-top: 0;
+    }
   }
   &-icon {
     position: absolute;
@@ -139,6 +174,10 @@ body {
     transform: translateX(-50%) translateY(50%);
     display: none;
     margin-bottom: -2px;
+
+    .m-adder-aside & {
+      left: 100%;
+    }
   }
   &.is-controlsEnabled:hover > .Adder {
     display: block;
@@ -172,6 +211,14 @@ body {
     font-size: 36px;
     line-height: 22px;
   }
+  .m-adder-aside &-icon,
+  .m-adder-aside &-wrapper:hover &-icon,
+  .m-adder-aside &-icon:hover {
+    width: 20px;
+    height: 20px;
+    line-height: 15px;
+    font-size: 24px;
+  }
   &-blocks {
     position: absolute;
     top: 0;
@@ -185,6 +232,11 @@ body {
   }
   &-wrapper:hover &-blocks,
   &.is-opened &-blocks {
+    display: block;
+  }
+  .m-adder-aside &-blocks {
+    top: -6px;
+    left: 19px;
     display: block;
   }
   &-block {
@@ -309,6 +361,12 @@ body {
     background: none;
     outline: none;
     font-size: 12px;
+
+    &--textarea {
+      width: 100%;
+      height: 60px;
+      resize: none;
+    }
   }
 }
 
@@ -425,8 +483,14 @@ body {
     vertical-align: top;
   }
 
+  &--left {
+    text-align: left;
+  }
   &--center {
     text-align: center;
+  }
+  &--right {
+    text-align: right;
   }
 
   .Link {
@@ -439,4 +503,26 @@ body {
   line-height: 0.95em;
   font-size: 13px;
   border-bottom: 1px dashed white;
+}
+
+
+// Интерфейс
+
+.InterfaceForm {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+
+  &-field {
+    margin-bottom: 20px;
+  }
+  &-label {
+    font-size: 13px;
+    margin-bottom: 5px;
+  }
+  &-select {
+    font-size: 15px;
+    border: 1px solid black;
+    border-radius: 3px;
+  }
 }

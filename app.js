@@ -34,6 +34,10 @@ angular
       };
       toggle($scope.build);
     };
+    $scope.interface = {
+      settings: 'block',
+      adder: 'centred'
+    };
 
   }])
   .directive('blockCollection', ['RecursionHelper', (RecursionHelper) => ({
@@ -78,6 +82,7 @@ angular
       };
       $scope.sortableConfig = {};
       $scope.toggleSettings = $rootScope.toggleSettings;
+      $scope.newBlocks = buildExample.blocks;
 
     }],
     compile: function(element) {

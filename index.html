@@ -5,7 +5,23 @@
   <title>Редактор виджетов</title>
   <script type="text/javascript" src="bundle.js"></script>
 </head>
-<body ng-app="app" ng-controller="Redactor">
+<body ng-app="app" ng-controller="Redactor" class="m-settings-{{ interface.settings }} m-adder-{{ interface.adder }}">
+  <div class="InterfaceForm">
+    <div class="InterfaceForm-field">
+      <div class="InterfaceForm-label">Положение панели настроек</div>
+      <select class="InterfaceForm-select" ng-model="interface.settings">
+        <option value="block">У блока</option>
+        <option value="fixed">Справа</option>
+      </select>
+    </div>
+    <div class="InterfaceForm-field">
+      <div class="InterfaceForm-label">Положение добавлялки элементов</div>
+      <select class="InterfaceForm-select" ng-model="interface.adder">
+        <option value="centred">В центре блока</option>
+        <option value="aside">Справа</option>
+      </select>
+    </div>
+  </div>
   <div class="Redactor">
     <block-collection build="build" set-outer-hover-status="noop" />
   </div>

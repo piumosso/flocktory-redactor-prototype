@@ -25,6 +25,7 @@
              ng-click="removeBlock($index)"></div>
         <div class="Block-settings">
           <div ng-include="'templates/settings.html'"></div>
+          <button class="Block-settingsClose" ng-click="toggleSettings(block)">Закрыть</button>
         </div>
       </div>
       <div class="Adder" ng-show="build.canReceive.length && (build.maxLength ? build.blocks.length < build.maxLength : true)">
