@@ -221,85 +221,88 @@ module.exports = {
     ]
   },
 
-  // Новые блоки
-  blocks: {
-    header: {
-      type: 'header',
+
+};
+
+// Новые блоки
+module.exports.blocks = {
+  header: {
+    type: 'header',
       align: 'center',
       content: '',
       color: '#ffffff'
-    },
-    text: {
-      type: 'text',
+  },
+  text: {
+    type: 'text',
       content: '',
       size: 'normal',
       align: 'center',
       color: '#ffffff'
-    },
-    error: {
-      type: 'error',
+  },
+  error: {
+    type: 'error',
       content: '',
       size: 'small',
       align: 'right',
       color: '#ff0000'
-    },
-    links: {
-      type: 'links',
+  },
+  links: {
+    type: 'links',
       align: 'center',
       build: {
-        canReceive: ['link'],
+      canReceive: ['link'],
         blocks: []
-      }
-    },
-    link: {
-      type: 'link',
+    }
+  },
+  link: {
+    type: 'link',
       content: '',
       action: ['to-screen', 'agreement'],
       color: '#ffffff'
-    },
-    form: {
-      type: 'form',
+  },
+  form: {
+    type: 'form',
       formType: 'login',
       background: ['#f46b3f', '#df371b'],
       backgroundImage: ' ',
       borderRadius: 3,
       build: {
-        canReceive: ['text', 'field', 'button', 'links'],
+      canReceive: ['text', 'field', 'button', 'links'],
         blocks: []
-      }
-    },
-    popup: {
-      type: 'popup',
+    }
+  },
+  popup: {
+    type: 'popup',
       background: ['#2a2c2b', '#2a2c2b'],
       backgroundImage: ' ',
       borderRadius: 3,
       build: {
-        canReceive: ['header', 'text', 'form', 'links'],
+      canReceive: ['header', 'text', 'form', 'links'],
         blocks: []
-      }
-    },
-    field: {
-      type: 'field',
+    }
+  },
+  field: {
+    type: 'field',
       build: {
-        canReceive: ['input', 'checkbox', 'error', 'text'],
+      canReceive: ['input', 'checkbox', 'error', 'text'],
         maxLength: 2,
         blocks: []
-      }
-    },
-    input: {
-      type: 'input',
+    }
+  },
+  input: {
+    type: 'input',
       name: '',
       placeholder: '',
       borderRadius: 3
-    },
-    checkbox: {
-      type: 'checkbox',
+  },
+  checkbox: {
+    type: 'checkbox',
       name: '',
       content: '',
       color: '#ffffff'
-    },
-    button: {
-      type: 'button',
+  },
+  button: {
+    type: 'button',
       content: '',
       action: ['close'],
       size: 'normal',
@@ -308,15 +311,14 @@ module.exports = {
       borderWidth: 0,
       borderColor: '#000000',
       borderRadius: 3
-    },
-    screen: {
-      type: 'screen',
+  },
+  screen: {
+    type: 'screen',
       name: 'new-screen',
       build: {
-        canReceive: ['popup', 'ribbon'],
+      canReceive: ['popup', 'ribbon'],
         maxLength: 1,
         blocks: []
-      }
     }
   }
 };
